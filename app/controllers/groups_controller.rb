@@ -3,27 +3,33 @@ class GroupsController < ApplicationController
 
   # GET /groups or /groups.json
   def index
-    @groups = Group.all
+    @groups = current_user.groups.order(id: :desc)
   end
 
   # GET /groups/1 or /groups/1.json
-  def show; end
+  def show
+    @group = Group.find(params[:id])
+  end
 
   # GET /groups/new
   def new
-    @group = Group.new
+    @group = current_user.groups.new
+    @icons = @group.icons
   end
 
   # GET /groups/1/edit
-  def edit; end
+  def edit
+    @icons = @group.icons
+  end
 
   # POST /groups or /groups.json
   def create
-    @group = Group.new(group_params)
+    @group = current_user.groups.new(group_params)
+    @icons = @group.icons
 
     respond_to do |format|
       if @group.save
-        format.html { redirect_to group_url(@group), notice: 'Group was successfully created.' }
+        format.html { redirect_to groups_path, notice: 'Group was successfully created.' }
         format.json { render :show, status: :created, location: @group }
       else
         format.html { render :new, status: :unprocessable_entity }

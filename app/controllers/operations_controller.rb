@@ -3,15 +3,22 @@ class OperationsController < ApplicationController
 
   # GET /operations or /operations.json
   def index
-    @operations = Operation.all
+    group_id = params[:group_id]
+    @group = current_user.groups.find(group_id)
+    @operations = @group.operations.order(id: :desc)
   end
 
   # GET /operations/1 or /operations/1.json
-  def show; end
+  def show
+    group_id = params[:group_id]
+    @group = current_user.groups.find(group_id)
+  end
 
   # GET /operations/new
   def new
-    @operation = Operation.new
+    group_id = params[:group_id]
+    @group = current_user.groups.find(group_id)
+    @operation = current_user.operations.new
   end
 
   # GET /operations/1/edit
@@ -19,11 +26,16 @@ class OperationsController < ApplicationController
 
   # POST /operations or /operations.json
   def create
-    @operation = Operation.new(operation_params)
+    group_id = params[:group_id]
+    @group = current_user.groups.find(group_id)
+    @operation = current_user.operations.new(operation_params)
+    @group.operations.push(@operation)
 
     respond_to do |format|
       if @operation.save
-        format.html { redirect_to operation_url(@operation), notice: 'Operation was successfully created.' }
+        format.html do
+          redirect_to group_operations_path(group_id: @group.id), notice: 'Operation was successfully created.'
+        end
         format.json { render :show, status: :created, location: @operation }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -50,7 +62,7 @@ class OperationsController < ApplicationController
     @operation.destroy
 
     respond_to do |format|
-      format.html { redirect_to operations_url, notice: 'Operation was successfully destroyed.' }
+      format.html { redirect_to group_operations_url, notice: 'Operation was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,6 +76,6 @@ class OperationsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def operation_params
-    params.require(:operation).permit(:author_id, :name, :amount)
+    params.require(:operation).permit(:name, :amount)
   end
 end
