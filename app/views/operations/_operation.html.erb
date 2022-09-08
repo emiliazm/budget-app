@@ -1,17 +1,19 @@
-<div id="<%= dom_id operation %>">
-  <p>
-    <strong>Author:</strong>
-    <%= operation.author_id %>
-  </p>
+<%= link_to group_operation_path(@group.id, operation.id) do %>
+  <div id="<%= dom_id operation %>", class="operation-item">
+    <div class="name-date">
+      <p>
+        <%= operation.name %>
+      </p>
 
-  <p>
-    <strong>Name:</strong>
-    <%= operation.name %>
-  </p>
+      <p class="date">
+        <%= operation.created_at.strftime("%d %B %Y") %>
+      </p>
 
-  <p>
-    <strong>Amount:</strong>
-    <%= operation.amount %>
-  </p>
+    </div>
 
-</div>
+    <p class="amount">
+      <strong><%= number_to_currency(operation.amount) %></strong>
+    </p>
+    
+  </div>
+<% end %>

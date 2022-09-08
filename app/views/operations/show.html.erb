@@ -1,10 +1,8 @@
-<p style="color: green"><%= notice %></p>
+<div class="show-page">
+  <%= render @operation %>
 
-<%= render @operation %>
-
-<div>
-  <%= link_to "Edit this operation", edit_operation_path(@operation) %> |
-  <%= link_to "Back to operations", operations_path %>
-
-  <%= button_to "Destroy this operation", @operation, method: :delete %>
+  <div class="links-show">
+    <%= link_to "Back to transactions", group_operations_path(@group.id) %>
+  </div>
 </div>
+<%= button_to "Delete this transaction", group_operation_path(@group.id, @operation.id), method: :delete, class: 'delete-btn' %>

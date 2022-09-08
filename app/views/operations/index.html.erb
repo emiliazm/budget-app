@@ -1,14 +1,15 @@
-<p style="color: green"><%= notice %></p>
+<div class="group-page">
 
-<h1>Operations</h1>
+  <div class="total-amount">
+    <p>Total amount:</p>
+    <strong><%= number_to_currency(@group.total) %></strong>
+  </div>
 
-<div id="operations">
-  <% @operations.each do |operation| %>
-    <%= render operation %>
-    <p>
-      <%= link_to "Show this operation", operation %>
-    </p>
-  <% end %>
+  <div id="operations">
+    <% @operations.each do |operation| %>
+      <%= render operation %>
+    <% end %>
+  </div>
 </div>
 
-<%= link_to "New operation", new_operation_path %>
+<%= link_to "New transaction", new_group_operation_path, class: 'add-btn' %>
