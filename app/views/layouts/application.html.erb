@@ -8,16 +8,47 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   </head>
 
   <body>
-    <div class="nav-bar">
-      <% if user_signed_in? %>
-      <p>Username: <%= current_user.name %></p>
-      <%= button_to "Sign out", destroy_user_session_path, :method => :delete, data:{turbo:false} %>
+    <% unless current_page?(root_path) %>
+      <div class="nav-bar">
+        <% unless current_page?(groups_path) %>
+          <%= link_to root_path, :class => 'material-symbols-outlined' do %>
+            <span class="material-symbols-outlined">arrow_back_ios</span>
+          <% end %>
+        <% end %>
+
+        <% if current_page?(new_user_registration_path) %>
+          <h3>SIGN UP</h3>
+          <div></div>
+        <% elsif current_page?(new_user_session_path) %>
+          <h3>SIGN IN</h2>
+          <div></div>
+        <% elsif current_page?(new_user_password_path) %>
+          <h3>RESET PASSWORD</h3>
+        <% end %>
+        <% if user_signed_in? %>
+          <% if current_page?(groups_path) %>
+            <span class="material-symbols-outlined">menu</span>
+            <h3>CATEGORY</h3>
+          <% elsif current_page?(new_group_path)%>
+            <h3>NEW CATEGORY</h3>
+          <% elsif current_page?(group_operations_path(@group.id)) %>
+            <h3>TRANSACTIONS</h3>
+          <% elsif current_page?(new_group_operation_path(@group.id)) %>
+            <h3>NEW TRANSACTIONS</h3>
+          <% end %>
+        <% end %>
+        <% if user_signed_in? %>
+          <%= button_to "Sign out", destroy_user_session_path, :method => :delete, data:{turbo:false}, class: 'signout-btn' %>
+        <% end %>
+      </div>
     <% end %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <p style="color: green"><%=notice%></p>
+    <p style="color: red"><%=alert%></p>
+
     <%= yield %>
   </body>
 </html>
