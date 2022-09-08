@@ -1,10 +1,13 @@
-<p style="color: green"><%= notice %></p>
+<div class="show-page">
+  <%= render @group %>
 
-<%= render @group %>
+  <div class="links-show">
+    <%= link_to "Edit this category", edit_group_path(group: @group) %> 
+    <span> | </span> 
+    <%= link_to "Back to categories", groups_path %>
+  </div>
+</div>
 
 <div>
-  <%= link_to "Edit this group", edit_group_path(@group) %> |
-  <%= link_to "Back to groups", groups_path %>
-
-  <%= button_to "Destroy this group", @group, method: :delete %>
+  <%= button_to "Delete this category", @group, method: :delete, class: 'delete-btn' %>
 </div>

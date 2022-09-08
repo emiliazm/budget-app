@@ -1,10 +1,11 @@
-<h1>Editing group</h1>
+<div class="show-page">
+  <%= render "form", group: @group %>
 
-<%= render "form", group: @group %>
+  <br>
 
-<br>
-
-<div>
-  <%= link_to "Show this group", @group %> |
-  <%= link_to "Back to groups", groups_path %>
+  <div class="links-show">
+    <%= link_to "Show this group", @group %> 
+    <span> | </span> 
+    <%= link_to "Back to groups", groups_path %>
+  </div>
 </div>
