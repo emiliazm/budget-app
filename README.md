@@ -1,8 +1,10 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Budget app
 
-> Description the project.
+> The Budget app its a mobile app that allows the user to manage his/her finacial transactions. The user can create diferents categories and inside them all the transactions.
+- (Heroku link)[https://tranquil-oasis-26787.herokuapp.com/]
+- (Project presentation video)[https://www.loom.com/share/76fdda8c2bbb4949bdbc55d98efaead8]
 
 ## Built With
 
@@ -94,6 +96,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - [Microverse](https://www.microverse.org/) for the motivation.
+- Design: Original design idea by (Gregoire Vella on Behance)[https://www.behance.net/gregoirevella]
 
 ## 📝 License
 
