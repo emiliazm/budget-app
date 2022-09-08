@@ -1,0 +1,10 @@
+<div class="group-page">
+
+  <div id="groups">
+    <% @groups.each do |group| %>
+      <%= render group %>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to "Add new category", new_group_path, class: 'add-btn' %>

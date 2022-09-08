@@ -1,0 +1,19 @@
+<%= link_to group_operation_path(@group.id, operation.id) do %>
+  <div id="<%= dom_id operation %>", class="operation-item">
+    <div class="name-date">
+      <p>
+        <%= operation.name %>
+      </p>
+
+      <p class="date">
+        <%= operation.created_at.strftime("%d %B %Y") %>
+      </p>
+
+    </div>
+
+    <p class="amount">
+      <strong><%= number_to_currency(operation.amount) %></strong>
+    </p>
+    
+  </div>
+<% end %>
