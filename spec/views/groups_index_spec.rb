@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-# rubocop:disable Metrics/BlockLength
 RSpec.describe 'Group model', type: :feature do
   before(:example) do
     @user = User.new(name: 'Tom', email: 'tom@mail.com', password: '123asd')
@@ -30,6 +29,4 @@ RSpec.describe 'Group model', type: :feature do
       expect(page).to have_current_path group_path(@group.id)
     end
   end
-
 end
-# rubocop:enable Metrics/BlockLength

@@ -17,7 +17,6 @@ RSpec.describe 'Operation pages', type: :request do
     @user.destroy
   end
 
-
   context 'When name must not be blank' do
     it 'name should be present.' do
       @operation.name = nil

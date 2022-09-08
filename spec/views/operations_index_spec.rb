@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-# rubocop:disable Metrics/BlockLength
 RSpec.describe 'Operation pages', type: :feature do
   before(:example) do
     @user = User.new(name: 'Tom', email: 'tom@mail.com', password: '123asd')
@@ -33,4 +32,3 @@ RSpec.describe 'Operation pages', type: :feature do
     end
   end
 end
-# rubocop:enable Metrics/BlockLength
