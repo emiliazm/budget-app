@@ -1,0 +1,13 @@
+<%= form_with(model: group) do |form| %>
+  <div class="name-field">
+    <%= form.text_field :name, placeholder: "Name", required: true %>
+  </div>
+
+  <div class="icon-field">
+    <%= form.select :icon, @icons.map { |i| [i.to_s, i.to_s] }, {} %>
+  </div>
+
+  <div>
+    <%= form.submit "Save", class: 'add-btn' %>
+  </div>
+<% end %>

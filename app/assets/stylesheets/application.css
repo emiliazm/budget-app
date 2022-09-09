@@ -1,0 +1,263 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/* .colors {
+  color: #3778c2;
+  color: #5fb523;
+  color: #434b54;
+} */
+
+@font-face {
+  font-family: 'novabold';
+  src: url("fonts/Proxima-Nova-Bold.otf");
+}
+
+@font-face {
+  font-family: 'novalight';
+  src: url("fonts/Proxima-Nova-Light.otf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'novalight', sans-serif;
+  color: #434b54;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: auto;
+  max-width: 100%;
+  background-color: rgb(224, 223, 223);
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'novabold', sans-serif;
+}
+
+h3 {
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+.home-container {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 40vh;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.login_btn,
+.signup_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 7vh;
+  text-align: center;
+}
+
+.login_btn {
+  background-color: #3778c2;
+  color: white;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  padding: 30px 5vw;
+  justify-content: space-between;
+  background-color: #3778c2;
+  width: 90vw;
+  max-width: 100%;
+  height: 40px;
+}
+
+.material-symbols-outlined {
+  color: white;
+}
+
+.signout-btn {
+  background-color: #3778c2;
+  border: none;
+  color: white;
+}
+
+#new_user {
+  padding: 0 2vh;
+}
+
+#user_name,
+#user_email,
+#user_password,
+#user_password_confirmation,
+#group_name,
+#group_icon,
+#operation_name,
+#operation_amount {
+  width: 92vw;
+  height: 5vh;
+  padding: 2vh;
+  border: none;
+  background-color: white;
+}
+
+#group_icon {
+  width: 100%;
+  height: 9vh;
+}
+
+.remember {
+  margin: 2vh;
+}
+
+#groups,
+#operations,
+.show-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0 15vh 0;
+}
+
+.group-container {
+  border-bottom: 0.5px solid #e5e4e4;
+}
+
+.group-item {
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+}
+
+.operation-item {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.group-item,
+.operation-item {
+  align-items: center;
+  padding: 0 2vw;
+  width: 90vw;
+  height: 10vh;
+  background-color: white;
+}
+
+.name-date {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-transform: capitalize;
+}
+
+.date {
+  font-size: x-small;
+  justify-self: flex-end;
+}
+
+.amount {
+  justify-self: flex-end;
+}
+
+.show {
+  text-align: end;
+  padding: 0 2vw;
+  background-color: white;
+}
+
+.icon {
+  font-size: 35px;
+}
+
+.add-btn,
+.delete-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5fb523;
+  height: 10vh;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  outline: 1px solid white;
+  outline-offset: -8px;
+  border: none;
+}
+
+.group-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 96vw;
+}
+
+.total-amount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2vh;
+  background-color: white;
+  width: 93vw;
+  height: 10vh;
+}
+
+.links-show {
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions {
+  position: absolute;
+  top: 40px;
+  right: 5vw;
+}
+
+.button-s {
+  background-color: #3778c2;
+  color: white;
+  border: none;
+}
+
+.reset-btn {
+  background-color: #e5e4e4;
+  color: #434b54;
+  border: none;
+}
+
+.reset-div {
+  margin: 15px;
+}

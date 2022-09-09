@@ -1,0 +1,13 @@
+<%= form_with(model: operation, url: group_operations_path) do |form| %>
+  <div>
+    <%= form.text_field :name, placeholder: "Name", required: true %>
+  </div>
+
+  <div>
+    <%= form.number_field :amount, placeholder: "Amount", required: true %>
+  </div>
+
+  <div>
+    <%= form.submit "Save", class: 'add-btn' %>
+  </div>
+<% end %>

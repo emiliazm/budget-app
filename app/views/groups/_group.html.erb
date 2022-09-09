@@ -1,0 +1,27 @@
+<div class="group-container">
+  <%= link_to group_operations_path(group_id: group.id) do %>
+    <div id="<%= dom_id group %>", class="group-item">
+      <p class="icon">
+        <%= group.icon %>
+      </p>
+
+      <div class="name-date">
+        <p>
+          <%= group.name %>
+        </p>
+
+        <p class="date">
+          <%= group.created_at.strftime("%d %B %Y") %>
+        </p>
+      </div>
+
+      <p class="amount">
+        <strong><%= number_to_currency(group.total) %></strong>
+      </p>
+
+    </div>
+  <% end %>
+  <p class="date show">
+    <%= link_to "Show this category", group %>
+  </p>
+</div>

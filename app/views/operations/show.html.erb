@@ -1,0 +1,8 @@
+<div class="show-page">
+  <%= render @operation %>
+
+  <div class="links-show">
+    <%= link_to "Back to transactions", group_operations_path(@group.id) %>
+  </div>
+</div>
+<%= button_to "Delete this transaction", group_operation_path(@group.id, @operation.id), method: :delete, class: 'delete-btn' %>
