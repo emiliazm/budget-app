@@ -3,8 +3,8 @@
 # Budget app
 
 > The Budget app its a mobile app that allows the user to manage his/her finacial transactions. The user can create diferents categories and inside them all the transactions.
-- (Heroku link)[https://tranquil-oasis-26787.herokuapp.com/]
-- (Project presentation video)[https://www.loom.com/share/76fdda8c2bbb4949bdbc55d98efaead8]
+- [Heroku link](https://tranquil-oasis-26787.herokuapp.com/)
+- [Project presentation video](https://www.loom.com/share/76fdda8c2bbb4949bdbc55d98efaead8)
 
 ## Built With
 
